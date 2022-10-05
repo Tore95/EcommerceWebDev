@@ -1,0 +1,6 @@
+#File e cartelle da ignorare
+.vscode
+.hintrc
+.ftpquota
+config.php
+.DS_Store
