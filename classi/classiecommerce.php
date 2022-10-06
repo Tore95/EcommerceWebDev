@@ -301,6 +301,27 @@ function svuotacarrello(){
     
 }
 
+
+function eliminadacarrello ($elementodaeliminare) {
+    
+   $array = $this->contenuto;
+   
+   $conteggioelementi = count($array);
+   
+   for ($x=0; $x <= $conteggioelementi; $x++){
+       
+       if ($array[$x] === $elementodaeliminare){
+           
+           unset($array[$x]);
+           
+       }
+       
+   }
+   
+   $this->contenuto = $array;
+    
+}
+
     
 }
 

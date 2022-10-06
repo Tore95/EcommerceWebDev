@@ -35,6 +35,16 @@ if ($_SESSION['ruolo'] === 'utente') { ?>
         $_SESSION['carrelloutente'] = $carrellodasvuotare;
         
         
+    } else if (isset($_POST['elimina'])){
+        
+        $elementodaeliminare = $_POST['elimina'];
+        
+        $carrello = $_SESSION['carrelloutente'];
+        
+        $carrello -> eliminadacarrello($elementodaeliminare);
+        
+        $_SESSION['carrelloutente'] = $carrello;
+        
     }
 
     ?>
@@ -91,7 +101,7 @@ if ($_SESSION['ruolo'] === 'utente') { ?>
                         </thead>
                         <tbody id="carrello">
                             <?php foreach ($prodotti_carrello as $elemento_carrello) { ?>
-                            <form>
+                            <form action="carrello.php" method="post">
                                 <tr>
                                     <td><img style="width:12vh;" src="<?php echo $elemento_carrello['immagine'] ?>" /></td>
                                     <th scope="row"><?php echo $elemento_carrello['nome_prodotto'] ?></th>
@@ -100,7 +110,7 @@ if ($_SESSION['ruolo'] === 'utente') { ?>
                                     <td>
                                         <div class="text-end">
                                             <input type="submit" name="aggiorna" value="aggiorna" class="btn btn-warning">
-                                            <a href="" class="btn btn-danger">Elimina</a>
+                                            <button value="<?php echo $elemento_carrello['id'] ?>" type="submit" name="elimina" class="btn btn-danger">elimina</button>
                                         </div>
                                     </td>
                                 </tr>
