@@ -47,10 +47,10 @@ if ($_SESSION['ruolo'] === 'amministratore') {
 
             $risultato = mysqli_query($mysqli, "UPDATE utenti SET nome_utente='$nuovonomeutente', password='$nuovapassword' , ruolo='$nuovoruolo', email='$nuovamail' WHERE id=$id");
 
-            echo 'dati modificati correttamente, id modificato è ' . $id;
+            $stato= 'dati modificati correttamente, id modificato è ' . $id;
         } else {
 
-            echo 'questo nome utente esiste già, scegline un altro';
+            $stato= 'questo nome utente esiste già, scegline un altro';
         }
     }
 
@@ -110,7 +110,7 @@ if ($_SESSION['ruolo'] === 'amministratore') {
         </script>
     </head>
 
-    <body <?php if (isset($_POST['conferma_modifiche'])) { ?>onload="showAlert('Utente eliminato','verde','utente eliminato correttamente')"<?php } ?>>
+    <body <?php if (isset($_POST['conferma_modifiche'])) { ?>onload="showAlert('Utente modificato','verde','<?php echo $stato ?>')"<?php } ?>>
 
         <?php
         header_sito();
