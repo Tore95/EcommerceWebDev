@@ -141,7 +141,13 @@ if ($_SESSION['ruolo'] === 'amministratore') {
                             }
                             ?>
                         </select>
-                        <a class="btn btn-dark" href="gestioneutenti.php">Annulla</a>
+                        <?php
+                            if($ruolo === 'amministratore') {
+                                echo "<a class='btn btn-dark' href='gestioneadmin.php'>Annulla</a>";
+                            } else {
+                                echo "<a class='btn btn-dark' href='gestioneutenti.php'>Annulla</a>";
+                            }
+                        ?>
                         <input class="btn btn-primary float-end" type="submit" value="Conferma Modifiche" name="conferma_modifiche">
                     </form>
                 </div>

@@ -4,12 +4,6 @@ session_start();
 
 if ($_SESSION['ruolo']==='amministratore'){
 
-?>
-
-
-
-<?php
-
 
 if (isset($_POST['aggiungi_utente'])){
     
@@ -25,29 +19,16 @@ if (isset($_POST['aggiungi_utente'])){
     
     if ($conteggio > 0){
         
-        echo 'questo nome utente esiste già, sceglierne un altro';
+        header("Location: ../login/gestioneutenti.php?nuovo-utente=error&nome-creazione=" . $nuovonomeutente);
         
     } else {
-        
         $risultato = mysqli_query($mysqli, "INSERT INTO utenti (nome_utente,password,email,ruolo) VALUES ('$nuovonomeutente','$nuovapassword','$nuovaemail','utente')");
-        echo 'utente creato correttamente';
+        header("Location: ../login/gestioneutenti.php?nuovo-utente=success&nome-creazione=" . $nuovonomeutente);
         
     }
     
     
 }
-
-
-?>
-
-
-
-
-
-
-
-
-<?php
 
 }
 

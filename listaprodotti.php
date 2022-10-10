@@ -12,7 +12,6 @@ if ($_SESSION['ruolo'] === 'amministratore') {
 
     // paginazione
 
-
     $risultatopaginazione = paginazione($_GET['pagina'], 10, $mysqli, "SELECT * FROM prodotti");
 
     $risultati_pagina_corrente = $risultatopaginazione['risultati_pagina_corrente'];
@@ -38,6 +37,7 @@ if ($_SESSION['ruolo'] === 'amministratore') {
 
     <body <?php if ($prodotto_eliminato != null) { ?> onload="alertProdottoEliminato('<?php echo $prodotto_eliminato ?>')" <?php } ?>>
         <script>
+            
             function confermaEliminazione(id,nome) {
                 const alertState = document.getElementById('alertState');
                 const alertText = document.getElementById('alertMessage');
@@ -56,6 +56,7 @@ if ($_SESSION['ruolo'] === 'amministratore') {
                 const elimminatoModal = new bootstrap.Modal('#alertProdottoEliminatoModal');
                 elimminatoModal.show();
             }
+
         </script>
 
         <?php

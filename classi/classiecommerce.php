@@ -313,6 +313,7 @@ function eliminadacarrello ($elementodaeliminare) {
        if ($array[$x] === $elementodaeliminare){
            
            unset($array[$x]);
+           $array = array_values($array);
            
        }
        
@@ -321,6 +322,68 @@ function eliminadacarrello ($elementodaeliminare) {
    $this->contenuto = $array;
     
 }
+
+
+
+function aggiornaquantita ($id,$volte){
+    
+    
+    //controllo quante volte l'articolo dato è già presente nell'array
+    
+    $array = $this->contenuto;
+    
+    $conteggioelementi = count($array);
+    $conteggioprodotto = 0;
+    
+    for ($x = 0; $x <= $conteggioelementi; $x++){
+        
+        if($array[$x]==$id){
+            
+            $conteggioprodotto = $conteggioprodotto + 1;
+            
+        }
+        
+    }
+    
+    
+    if ($volte < $conteggioprodotto){
+        
+        
+        $voltedaeliminare = $conteggioprodotto - $volte;
+        $volteeliminato = 0;
+        
+        
+        for ($x=0; $x <=$conteggioelementi; $x++){
+            
+           if ($volteeliminato < $voltedaeliminare){
+               
+               if($array[$x]==$id){
+                   unset($array[$x]);
+                   $array = array_values($array);
+                   $volteeliminato = $volteeliminato + 1;
+               }
+               
+           }
+        }
+        
+    }else {
+    
+    $voltedaeseguire = $volte - $conteggioprodotto;
+    
+    
+    for ($x=1 ; $x <= $voltedaeseguire; $x++){
+        
+        array_push($array, $id);
+        
+    }
+    }
+    
+    $this->contenuto = $array;
+    
+    
+}
+
+
 
     
 }

@@ -45,6 +45,17 @@ if ($_SESSION['ruolo'] === 'utente') { ?>
         
         $_SESSION['carrelloutente'] = $carrello;
         
+    } else if (isset($_POST['aggiorna'])){
+        
+        $elementodaaggiornare = $_POST['aggiorna']; //qui è contenuto l'id del prodotto in corrispondenza del quale è stato premuto il tasto aggiorna
+        
+        $carrello = $_SESSION['carrelloutente'];
+        
+        $volte = $_POST['quantita'];
+        
+        $carrello -> aggiornaquantita ($elementodaaggiornare, $volte);
+        
+        $_SESSION['carrelloutente'] = $carrello;
     }
 
     ?>
@@ -105,11 +116,13 @@ if ($_SESSION['ruolo'] === 'utente') { ?>
                                 <tr>
                                     <td><img style="width:12vh;" src="<?php echo $elemento_carrello['immagine'] ?>" /></td>
                                     <th scope="row"><?php echo $elemento_carrello['nome_prodotto'] ?></th>
-                                    <td><input type="number" class="form-control" style="width: 5rem;" name="quantità" value="<?php echo $elemento_carrello['conteggio'] ?>"></td>
+                                    <form action="carrello.php" method="post">
+                                    <td><input type="number" class="form-control" style="width: 5rem;" name="quantita" value="<?php echo $elemento_carrello['conteggio'] ?>"></td>
                                     <td><?php echo $elemento_carrello['prezzo'] * $elemento_carrello['conteggio'] ?>€</td>
                                     <td>
                                         <div class="text-end">
-                                            <input type="submit" name="aggiorna" value="aggiorna" class="btn btn-warning">
+                                            <button type="submit" name="aggiorna" class="btn btn-warning" value="<?php echo $elemento_carrello['id'] ?>">aggiorna</button>
+                                            </form>
                                             <button value="<?php echo $elemento_carrello['id'] ?>" type="submit" name="elimina" class="btn btn-danger">elimina</button>
                                         </div>
                                     </td>
