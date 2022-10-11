@@ -2,3 +2,12 @@
 [06-Oct-2022 14:28:16 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/header.php on line 5
 [10-Oct-2022 14:53:10 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/fgfjoszt/public_html/login/aggiungiutente.php:8) in /home/fgfjoszt/public_html/login/aggiungiutente.php on line 35
 [10-Oct-2022 14:54:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/fgfjoszt/public_html/login/aggiungiutente.php:8) in /home/fgfjoszt/public_html/login/aggiungiutente.php on line 29
+[11-Oct-2022 08:21:52 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/accedi.php on line 85
+[11-Oct-2022 08:21:52 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/header.php on line 5
+[11-Oct-2022 08:21:57 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/accedi.php on line 85
+[11-Oct-2022 08:21:57 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/header.php on line 5
+[11-Oct-2022 09:17:08 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/fgfjoszt/public_html/login/test.php on line 11
+[11-Oct-2022 09:17:17 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/fgfjoszt/public_html/login/test.php on line 11
+[11-Oct-2022 09:17:19 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/fgfjoszt/public_html/login/test.php on line 11
+[11-Oct-2022 10:13:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/accedi.php on line 85
+[11-Oct-2022 10:13:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/header.php on line 5

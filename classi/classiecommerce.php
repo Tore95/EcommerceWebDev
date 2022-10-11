@@ -314,6 +314,8 @@ function eliminadacarrello ($elementodaeliminare) {
            
            unset($array[$x]);
            $array = array_values($array);
+           $conteggioelementi = count($array);
+           $x = -1;
            
        }
        
@@ -360,9 +362,12 @@ function aggiornaquantita ($id,$volte){
                if($array[$x]==$id){
                    unset($array[$x]);
                    $array = array_values($array);
+                   $conteggioelementi = count($array);
                    $volteeliminato = $volteeliminato + 1;
                }
                
+           } else {
+               break;
            }
         }
         
