@@ -11,3 +11,5 @@
 [11-Oct-2022 09:17:19 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/fgfjoszt/public_html/login/test.php on line 11
 [11-Oct-2022 10:13:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/accedi.php on line 85
 [11-Oct-2022 10:13:28 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/header.php on line 5
+[12-Oct-2022 08:10:56 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/accedi.php on line 85
+[12-Oct-2022 08:10:56 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /home/fgfjoszt/public_html/login/header.php on line 5

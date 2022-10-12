@@ -1,0 +1,86 @@
+[
+    {
+        "0": "9",
+        "id": "9",
+        "1": "amministratore",
+        "nome_utente": "amministratore",
+        "2": "",
+        "email": "",
+        "3": "amministratore",
+        "password": "amministratore",
+        "4": "amministratore",
+        "ruolo": "amministratore"
+    },
+    {
+        "0": "17",
+        "id": "17",
+        "1": "quattro",
+        "nome_utente": "quattro",
+        "2": "",
+        "email": "",
+        "3": "quattro",
+        "password": "quattro",
+        "4": "utente",
+        "ruolo": "utente"
+    },
+    {
+        "0": "18",
+        "id": "18",
+        "1": "cinque",
+        "nome_utente": "cinque",
+        "2": "",
+        "email": "",
+        "3": "cinque",
+        "password": "cinque",
+        "4": "utente",
+        "ruolo": "utente"
+    },
+    {
+        "0": "20",
+        "id": "20",
+        "1": "sette",
+        "nome_utente": "sette",
+        "2": "",
+        "email": "",
+        "3": "sette",
+        "password": "sette",
+        "4": "utente",
+        "ruolo": "utente"
+    },
+    {
+        "0": "22",
+        "id": "22",
+        "1": "nove",
+        "nome_utente": "nove",
+        "2": "",
+        "email": "",
+        "3": "nove",
+        "password": "nove",
+        "4": "utente",
+        "ruolo": "utente"
+    },
+    {
+        "0": "31",
+        "id": "31",
+        "1": "admin2",
+        "nome_utente": "admin2",
+        "2": "",
+        "email": "",
+        "3": "admin2",
+        "password": "admin2",
+        "4": "amministratore",
+        "ruolo": "amministratore"
+    },
+    {
+        "0": "35",
+        "id": "35",
+        "1": "ciccio",
+        "nome_utente": "ciccio",
+        "2": "mail@mail.com",
+        "email": "mail@mail.com",
+        "3": "ciccio",
+        "password": "ciccio",
+        "4": "utente",
+        "ruolo": "utente"
+    }
+]

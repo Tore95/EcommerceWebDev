@@ -137,7 +137,7 @@ if ($_SESSION['ruolo'] === 'utente') { ?>
                 <div class="col-sm">
                     <h4>Totale carrello: <span id="totaleCarrello"><?php echo sommaCarrello($prodotti_carrello) ?></span>€</h4>
                 </div>
-                <div class="col-sm"><input style="margin-left:5px;" type="button" class="btn btn-primary float-end" name="paga" value="Acquista" onclick="paga()"><input type="submit" class="btn btn-primary float-end" name="svuota" value="Svuota Carrello"></div>
+                <div class="col-sm"><a href="checkout.php" style="margin-left:5px;" class="btn btn-primary float-end">Acquista</a><input type="submit" class="btn btn-primary float-end" name="svuota" value="Svuota Carrello"></div>
             </div>
             </form>
         </div>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav" id="list-tab" role="tablist">
+          <div class="nav-item">
+            <a class="nav-link active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab"
+              aria-controls="list-home">Home</a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab"
+              aria-controls="list-profile">Profile</a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" id="list-cart-list" data-bs-toggle="list" href="#list-cart" role="tab"
+              aria-controls="list-cart">Carrello</a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" id="list-orders-list" data-bs-toggle="list" href="#list-orders" role="tab"
+              aria-controls="list-orders">Ordini</a>
+          </div>
+        </div>
+        <div class="d-flex nav-item">
+          <a class="float-sm-right nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+            <!-- Homepage -->
+            <h1>Prodotti:</h1>
+            <hr>
+            <div class="row" id="listaProdotti"></div>
+          </div>
+          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+            <!-- Profilo -->
+            <h3 class="pt-2">Profilo Utente</h3>
+            <hr>
+            <h4 id="welcome">Benvenuto: </h4>
+            <p>Informazioni sull'Utente</p>
+            <table id="userInfo" class="table"></table>
+            <form class="pt-3">
+              <div class="row">
+                <div class="col"><label for="ricarica" class="form-label">Ricarica Conto</label></div>
+                <div class="col"><input id="ricarica" name="ricarica" class="form-control" type="number"></div>
+                <div class="col"><input type="button" onclick="ricaricaConto()" class="btn btn-primary"
+                    value="Ricarica Conto"></div>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="list-cart" role="tabpanel" aria-labelledby="list-cart-list">
+            <!-- Carrello -->
+            <h3 class="pt-3">Carrello</h3>
+            <hr>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Prodotto</th>
+                  <th scope="col">Prezzo</th>
+                </tr>
+              </thead>
+              <tbody id="carrello">
+                <!--
+                      <tr>
+                        <th scope="row">Nome</th>
+                        <td>Prezzo</td>
+                      </tr>
+                    -->
+              </tbody>
+            </table>
+            <hr>
+            <div class="row">
+              <div class="col-sm"><h4>Totale carrello: <span id="totaleCarrello">50</span>€</h4></div>
+              <div class="col-sm"><input type="button" class="btn btn-primary float-end" name="paga" value="Acquista" onclick="paga()"></div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="list-orders" role="tabpanel" aria-labelledby="list-order-list">
+            <!-- Ordini -->
+            <h1>Ordini</h1>
+            <div class="accordion" id="storicoOrdini">
+              <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Ordine numero: #14837
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body mb-3">
+                    <h4>Ordine numero: 3432784</h4>
+                    <p>Data acquisto: 29/01/2022 ore 13:55</p>
+                    <table class="table">
+                      <thead>
+                        <th>Nome</th>
+                        <th>Descrizione</th>
+                        <th>Prezzo</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Hamburger</td>
+                          <td>panino con pancetta</td>
+                          <td>10€</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <h6 class="float-end">Totale prezzo ordine: 50€</h6>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <label class="form-lable" for="login-email">Inserisci Email</label>
+            <input id="login-email" class="form-control" type="email">
+            <hr>
+            <label class="form-label" for="login-password">Password:</label>
+            <input id="login-password" type="password" class="form-control">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+          <button type="button" class="btn btn-primary">Accedi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Alert Modal -->
+  <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="alertModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="alertState" class="alert">
+            <p id="alertMessage">Attenzione!!!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <script src="carrello.js"></script>
+</body>
+
+</html>

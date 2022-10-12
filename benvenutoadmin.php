@@ -45,10 +45,6 @@ if ($_SESSION['ruolo'] === 'amministratore') {
                             <td>Gestione Admin</td>
                             <td><a href="gestioneadmin.php" class="btn btn-warning">Accedi <i class="fa-solid fa-pen-to-square"></i></a></td>
                         </tr>
-                        <tr>
-                            <td>Gestione Ordini</td>
-                            <td><a href="#" class="btn btn-warning">Accedi <i class="fa-solid fa-pen-to-square"></i></a></td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -60,7 +56,7 @@ if ($_SESSION['ruolo'] === 'amministratore') {
 
     //echo '<a href="registraamministratore.php">Registra nuovo admin</a>';
     } else if ($_SESSION['ruolo'] === 'utente') {
-        header("Location: ../login/index.php");
+        header("Location: ../login/benvenuto.php");
     }
 
 
